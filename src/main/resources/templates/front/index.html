@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{/front/images/favicon.png}">
+    <!-- Pignose Calender -->
+    <link  rel="stylesheet" th:href="@{/front/./plugins/pg-calendar/css/pignose.calendar.min.css}">
+    <!-- Chartist -->
+    <link rel="stylesheet" th:href="@{/front/./plugins/chartist/css/chartist.min.css}">
+    <link rel="stylesheet" th:href="@{/front/./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css}">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" th:href="@{/front/./css/style.css}" >
+
+</head>
+
+<body>
+
+  
+  
+  
+  
+  <div th:replace="fragments/sidebar :: sidebar"/>
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+<br>
+<br>
+<br>
+             <div class="text-center">
+                                   
+                                   <h2 align="center">Bienvenue à ASTOCK</h2>
+                                   
+                                    <img th:src="@{/front/./images/ASTOCK.png}" class="w3-round" alt="">
+                         
+                    
+                                </div>
+                                <center>
+            <p class="my-5">
+						<a th:href="@{'/actualite/list/'}" class="btn btn-primary"><i
+							class="fas fa-user-plus ml-2"> Actualités</i></a>
+					</p>
+        <p class="my-5">
+						<a th:href="@{'/apropos/list/'}" class="btn btn-primary"><i
+							class="fas fa-user-plus ml-2"> A propos de nous</i></a>
+					</p>
+            </center>
+            
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        
+    <div th:replace="fragments/footer :: footer"/>
+   
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script th:src="@{/front/plugins/common/common.min.js}"></script>
+    <script th:src="@{/front/js/custom.min.js}"></script>
+    <script th:src="@{/front/js/settings.js}"></script>
+    <script th:src="@{/front/js/gleek.js}"></script>
+    <script th:src="@{/front/js/styleSwitcher.js}"></script>
+
+    <!-- Chartjs -->
+    <script th:src="@{/front/./plugins/chart.js/Chart.bundle.min.js}"></script>
+    <!-- Circle progress -->
+    <script th:src="@{/front/./plugins/circle-progress/circle-progress.min.js}"></script>
+    <!-- Datamap -->
+    <script th:src="@{/front/./plugins/d3v3/index.js}"></script>
+    <script th:src="@{/front/./plugins/topojson/topojson.min.js}"></script>
+    <script th:src="@{/front/./plugins/datamaps/datamaps.world.min.js}"></script>
+    <!-- Morrisjs -->
+    <script th:src="@{/front/./plugins/raphael/raphael.min.js}"></script>
+    <script th:src="@{/front/./plugins/morris/morris.min.js}"></script>
+    <!-- Pignose Calender -->
+    <script th:src="@{/front/./plugins/moment/moment.min.js}"></script>
+    <script th:src="@{/front./plugins/pg-calendar/js/pignose.calendar.min.js}"></script>
+    <!-- ChartistJS -->
+    <script th:src="@{/front/./plugins/chartist/js/chartist.min.js}"></script>
+    <script th:src="@{/front/./plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js}"></script>
+
+
+
+    <script th:src="@{/front/./js/dashboard/dashboard-1.js}"></script>
+
+</body>
+
+</html>

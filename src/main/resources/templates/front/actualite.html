@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quixlab - Bootstrap Admin Dashboard Template by
+	Themefisher.com</title>
+<!-- Favicon icon -->
+<link rel="icon" type="image/png" sizes="16x16"
+	th:href="@{/front/images/favicon.png}">
+<!-- Pignose Calender -->
+<link rel="stylesheet"
+	th:href="@{/front/./plugins/pg-calendar/css/pignose.calendar.min.css}">
+<!-- Chartist -->
+<link rel="stylesheet"
+	th:href="@{/front/./plugins/chartist/css/chartist.min.css}">
+<link rel="stylesheet"
+	th:href="@{/front/./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css}">
+<!-- Custom Stylesheet -->
+<link rel="stylesheet" th:href="@{/front/./css/style.css}">
+
+</head>
+
+<body>
+
+	
+	
+	<div th:replace="fragments/sidebar :: sidebar"/>
+	
+	
+	
+	
+	
+	
+	
+		<!--**********************************
+            Content body start
+        ***********************************-->
+
+
+
+		<div class="content-body">
+
+			<div class="row page-titles mx-0">
+				<div class="col p-md-0">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+						<li class="breadcrumb-item active"><a
+							href="javascript:void(0)">Home</a></li>
+					</ol>
+				</div>
+			</div>
+			<!-- row -->
+
+			<div class="container-fluid">
+				<div class="row justify-content-center">
+					<div class="col-lg-12">
+						<div class="card">
+							<div class="card-body">
+								<div class="form-validation">
+								
+								
+									<form class="form-valide" action="#" method="post">
+									
+									
+									
+								<div class="form-group row">
+                             
+                                       
+                                      <label class="col-lg-4 col-form-label" for="val-titre">Date<span class="text-danger" ></span>
+											</label>
+											<div class="col-lg-6">
+											
+                                       
+                                        <div>
+                                                      <script>
+                                             date = new Date().toLocaleDateString();
+                                                      document.write(date);
+                                                           </script>
+                                       </div>
+                                        </input>
+                                        
+                                        
+                                    </div>
+                                   
+                                </div>
+
+										<div class="form-group row">
+											<label class="col-lg-4 col-form-label" for="val-titre">Titre
+												<span class="text-danger">*</span>
+											</label>
+											<div class="col-lg-6">
+												<input type="text" class="form-control" id="val-titre"
+													name="val-currency" placeholder="Titre">
+											</div>
+										</div>
+
+
+										<div class="form-group row">
+											<label class="col-lg-4 col-form-label" for="val-description">Description
+												<span class="text-danger">*</span>
+											</label>
+											<div class="col-lg-6">
+												<textarea class="form-control" id="val-suggestions"
+													name="val-description" rows="5"
+													placeholder="What would you like to say?"></textarea>
+											</div>
+										</div>
+
+										
+
+
+											<div class="form-group row">
+												<label class="col-lg-4 col-form-label" for="val-image">Image
+													<span class="text-danger">*</span>
+												</label>
+												<div class="col-lg-6">
+
+													<input type="file" class="form-control-file">
+												</div>
+											</div>
+
+                                           <div class="form-group row">
+                                            <div class="col-lg-8 ml-auto">
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+
+
+									
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+		<!--**********************************
+            Content body end
+        ***********************************-->
+
+
+	
+	<div th:replace="fragments/footer :: footer"/>
+	
+	
+	<!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+	<!--**********************************
+        Scripts
+    ***********************************-->
+	<script th:src="@{/front/plugins/common/common.min.js}"></script>
+	<script th:src="@{/front/js/custom.min.js}"></script>
+	<script th:src="@{/front/js/settings.js}"></script>
+	<script th:src="@{/front/js/gleek.js}"></script>
+	<script th:src="@{/front/js/styleSwitcher.js}"></script>
+
+	<!-- Chartjs -->
+	<script th:src="@{/front/./plugins/chart.js/Chart.bundle.min.js}"></script>
+	<!-- Circle progress -->
+	<script
+		th:src="@{/front/./plugins/circle-progress/circle-progress.min.js}"></script>
+	<!-- Datamap -->
+	<script th:src="@{/front/./plugins/d3v3/index.js}"></script>
+	<script th:src="@{/front/./plugins/topojson/topojson.min.js}"></script>
+	<script th:src="@{/front/./plugins/datamaps/datamaps.world.min.js}"></script>
+	<!-- Morrisjs -->
+	<script th:src="@{/front/./plugins/raphael/raphael.min.js}"></script>
+	<script th:src="@{/front/./plugins/morris/morris.min.js}"></script>
+	<!-- Pignose Calender -->
+	<script th:src="@{/front/./plugins/moment/moment.min.js}"></script>
+	<script
+		th:src="@{/front./plugins/pg-calendar/js/pignose.calendar.min.js}"></script>
+	<!-- ChartistJS -->
+	<script th:src="@{/front/./plugins/chartist/js/chartist.min.js}"></script>
+	<script
+		th:src="@{/front/./plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js}"></script>
+
+
+
+	<script th:src="@{/front/./js/dashboard/dashboard-1.js}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Produits</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+	integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+	crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
+
+
+
+<link rel="icon" type="image/png" sizes="16x16"
+	th:href="@{/front/images/favicon.png}">
+<!-- Pignose Calender -->
+<link rel="stylesheet"
+	th:href="@{/front/./plugins/pg-calendar/css/pignose.calendar.min.css}">
+<!-- Chartist -->
+<link rel="stylesheet"
+	th:href="@{/front/./plugins/chartist/css/chartist.min.css}">
+<link rel="stylesheet"
+	th:href="@{/front/./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css}">
+<!-- Custom Stylesheet -->
+<link rel="stylesheet" th:href="@{/front/./css/style.css}">
+</head>
+
+
+<body>
+
+	<div th:replace="/fragments/sidebar :: sidebar" />
+	<div class="content-body">
+
+		<div class="row page-titles mx-0">
+			<div class="col p-md-0">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+					<li class="breadcrumb-item active"><a
+						href="javascript:void(0)">Home</a></li>
+				</ol>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<h2 align="center">Liste des produits</h2>
+
+			<div class="card">
+				<div class="card-body">
+					<div th:switch="${produits}" class="container my-5">
+					   <div sec:authorize="hasAuthority('ADMIN')">
+						<p class="my-5">
+							<a th:href="@{'/produit/add/'}" class="btn btn-primary"><i
+								class="fas fa-user-plus ml-2"> Add Product</i></a>
+						</p>
+						</div>
+						<div class="col-md-10">
+							<h2 th:case="null">No Product yet!</h2>
+							<div th:case="*">
+								<table class="table table-striped table-responsive-md">
+									<thead>
+										<tr>
+											<th>Libelle</th>
+											<th>PhotoFace</th>
+											<th>PhotoProfil</th>
+											<th>Prix</th>
+											<th>Description</th>
+											<th>QuantiteStock</th>
+											<th>PrixPromotion</th>
+											<th>DateExpiration</th>
+											<th>Fournisseur</th>
+											   <div sec:authorize="hasAuthority('ADMIN')">
+											<th>Show</th>
+											<th>Edit</th>
+											<th>Delete</th>
+											</div>
+										</tr>
+									</thead>
+									<tbody>
+										<tr th:each="produit : ${produits}">
+										
+										
+											<td th:text="${produit.libelle}"></td>
+
+											       
+
+                                  <td> <img alt="Image" th:src="@{'/uploads/'+ ${produit.fournisseur.logo}}" width="50" height="50"/> </td>
+                                   
+
+
+
+											<td><img alt="Image"
+												th:src="@{'/uploads/'+ ${produit.photoProfil}}" width="50"
+												height="50" /></td>
+
+											<td th:text="${produit.prix}"></td>
+											<td th:text="${produit.description}"></td>
+											<td th:text="${produit.quantiteStock}"></td>
+											<td th:text="${produit.prixPromotion}"></td>
+
+
+											<!-- 	<td th:text="${#dates.format(sprint.releaseDate, 'dd-MMM-yyyy')}"></td> -->
+
+											<td th:text="${produit.dateExpiration}"></td>
+
+											<td th:text="${produit.fournisseur.nom}"></td>
+											
+											   <div sec:authorize="hasAuthority('ADMIN')">
+											
+											<td><a th:href="@{/produit/show/{id}(id=${produit.id})}"
+												class="btn btn-primary"><i class="fas fa-user-show ml-2"></i>Show
+													details</a></td>
+											<td><a th:href="@{/produit/edit/{id}(id=${produit.id})}"
+												class="btn btn-warning"><i class="fas fa-user-edit ml-2"></i></a></td>
+											<td><a
+												th:href="@{/produit/delete/{id}(id=${produit.id})}"
+												class="btn btn-danger"><i class="fas fa-user-times ml-2"></i></a></td>
+												</div>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div th:replace="/fragments/scripts :: scripts" />
+		<div th:replace="fragments/footer :: footer" />
+</body>
+</html>
